@@ -1,6 +1,9 @@
 import React from 'react';
-import SimpleNavbar from '../components/SimpleNavbar';
-import Footer from '../components/Footer';
+// Mesma coisa aqui: descendo duas escadas para achar os componentes
+import SimpleNavbar from '../../components/SimpleNavbar';
+import Footer from '../../components/Footer';
+
+// Daqui para baixo, o código continua igual...
 
 const Privacy: React.FC = () => {
   return (
