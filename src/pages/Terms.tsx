@@ -1,6 +1,9 @@
 import React from 'react';
-import SimpleNavbar from '../components/SimpleNavbar';
-import Footer from '../components/Footer';
+// Note os dois pontos e barra: ../../ (Isso significa: volte duas pastas)
+import SimpleNavbar from '../../components/SimpleNavbar';
+import Footer from '../../components/Footer';
+
+// Daqui para baixo, o código continua igual...
 
 const Terms: React.FC = () => {
   return (
