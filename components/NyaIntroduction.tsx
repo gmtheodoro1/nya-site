@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Leaf, Star, Sparkles } from 'lucide-react';
 
@@ -80,7 +79,7 @@ const NyaIntroduction: React.FC = () => {
 
         </div>
 
-        {/* Right Column: The Visual (Image) */}
+        {/* Right Column: The Visual (Image) - ADICIONADO loading="lazy" */}
         <div className="relative order-1 lg:order-2 flex justify-center">
           {/* Enhanced Aura behind image */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] bg-lavender/15 blur-[100px] rounded-full pointer-events-none mix-blend-screen animate-pulse-slow"></div>
@@ -89,6 +88,7 @@ const NyaIntroduction: React.FC = () => {
           <img 
             src="https://i.postimg.cc/Nf5h79S6/NAV.png" 
             alt="NAV" 
+            loading="lazy"
             className="w-full max-w-[500px] h-auto object-contain animate-float drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] grayscale-[10%] hover:grayscale-0 transition-all duration-700 relative z-10"
             style={{ animationDuration: '8s' }}
           />
