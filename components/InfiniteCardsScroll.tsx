@@ -67,7 +67,8 @@ export default function InfiniteCardsScroll() {
               <div className="absolute top-1/2 left-8 -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-mint/10 blur-xl rounded-full pointer-events-none"></div>
               <img 
                 src={card.image} 
-                alt={card.title} 
+                alt={card.title}
+                loading="lazy"
                 className="relative z-10 w-20 h-20 object-contain drop-shadow-[0_0_15px_rgba(170,228,167,0.2)]" 
               />
             </div>
