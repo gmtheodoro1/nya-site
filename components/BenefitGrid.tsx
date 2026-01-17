@@ -62,7 +62,8 @@ const BenefitGrid: React.FC = () => {
               <div className="absolute top-1/2 left-8 -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-mint/10 blur-2xl rounded-full pointer-events-none group-hover:bg-mint/20 transition-colors"></div>
               <img 
                 src={card.image} 
-                alt={card.title} 
+                alt={card.title}
+                loading="lazy"
                 className="relative z-10 w-20 h-20 object-contain drop-shadow-[0_0_15px_rgba(170,228,167,0.2)] transform group-hover:scale-105 transition-transform duration-500" 
               />
             </div>
