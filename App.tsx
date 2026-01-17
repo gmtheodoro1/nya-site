@@ -9,7 +9,7 @@ import EmotionalJourney from './components/EmotionalJourney';
 import NyaIntroduction from './components/NyaIntroduction';
 import Comparison from './components/Comparison';
 import ConversationalFlow from './components/ConversationalFlow'; 
-import DeepDive from './components/DeepDive';
+// DeepDive removido daqui
 import SacredSpace from './components/SacredSpace';
 import SensationCards from './components/SensationCards';
 import HarmonyObjection from './components/HarmonyObjection';
@@ -19,8 +19,8 @@ import Footer from './components/Footer';
 import BackgroundWrapper from './components/BackgroundWrapper';
 
 // Pages
-import Terms from './src/pages/Terms';
-import Privacy from './src/pages/Privacy';
+import Terms from './pages/Terms';
+import Privacy from './pages/Privacy';
 
 const LandingPage: React.FC = () => (
   <>
@@ -39,7 +39,7 @@ const LandingPage: React.FC = () => (
       <div className="flex flex-col gap-0 mt-0">
         <Comparison />
         <ConversationalFlow />
-        <DeepDive />
+        {/* DeepDive removido daqui */}
         <SacredSpace />
         <SensationCards />
         <HarmonyObjection />
