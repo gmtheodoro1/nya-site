@@ -19,7 +19,7 @@ const Pricing: React.FC = () => {
       price: "R$ 136,00",
       period: "/mês",
       description: "Um ciclo de renovação profunda.",
-      subtext: "Cobrado R$ 816 semestralmente",
+      subtext: "Cobrado R$816,00 semestralmente",
       highlight: true, // Destaque visual
       savings: "MELHOR ESCOLHA • ECONOMIZE 15%",
       savingsColor: "mint"
@@ -29,7 +29,7 @@ const Pricing: React.FC = () => {
       price: "R$ 144,00",
       period: "/mês",
       description: "Compromisso com o equilíbrio.",
-      subtext: "Cobrado R$ 432 trimestralmente",
+      subtext: "Cobrado R$432,00 trimestralmente",
       highlight: false,
       savings: "ECONOMIZE 10%",
       savingsColor: "lavender"
