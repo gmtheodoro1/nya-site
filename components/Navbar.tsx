@@ -7,21 +7,17 @@ const Navbar: React.FC = () => {
   useEffect(() => {
     const handleScroll = () => {
       // Sensor Turbo 3-em-1: Verifica a janela, o documento ou o corpo.
-      // Se qualquer um deles mexer, a gente ativa o vidro!
       const scrollPosition = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop;
       
-      if (scrollPosition > 0) { // Mudei para > 0 para ser instantâneo
+      if (scrollPosition > 0) { 
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
       }
     };
 
-    // Adiciona o sensor
     window.addEventListener('scroll', handleScroll);
-    
-    // Check inicial caso a página já carregue rolada
-    handleScroll();
+    handleScroll(); // Check inicial
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -30,18 +26,21 @@ const Navbar: React.FC = () => {
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-in-out ${
         isScrolled
-          ? 'bg-[#131129]/80 backdrop-blur-xl border-b border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)] py-3' // Vidro ativado
-          : 'bg-transparent py-6' // Transparente no topo
+          ? 'bg-[#131129]/80 backdrop-blur-xl border-b border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)] py-3' 
+          : 'bg-transparent py-6'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         
-        {/* Logo Area */}
-        <div className="flex items-center gap-2 cursor-pointer group">
-          <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-lavender to-deepPurple flex items-center justify-center shadow-[0_0_15px_rgba(194,167,228,0.3)] group-hover:scale-110 transition-transform duration-300">
-             <span className="text-white font-serif italic font-bold text-lg">N</span>
-          </div>
-          <span className="text-xl font-serif text-white tracking-wide">Nya</span>
+        {/* Logo Area - COM LAZY LOADING */}
+        <div className="flex items-center gap-3 cursor-pointer group">
+          <img 
+            src="https://i.postimg.cc/fRGstCb0/icone-final.png" 
+            alt="Nya Logo"
+            loading="lazy"
+            className="w-9 h-9 rounded-full object-cover shadow-[0_0_15px_rgba(194,167,228,0.3)] group-hover:scale-110 transition-transform duration-300"
+          />
+          <span className="text-xl font-serif text-white tracking-wide group-hover:text-[#c2a7e4] transition-colors duration-300">Nya</span>
         </div>
 
         {/* Botão Planos */}
