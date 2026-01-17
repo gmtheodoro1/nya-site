@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 const HarmonyObjection: React.FC = () => {
@@ -29,7 +28,7 @@ const HarmonyObjection: React.FC = () => {
           </div>
         </div>
 
-        {/* Right Column: Image */}
+        {/* Right Column: Image - ADICIONADO loading="lazy" */}
         <div className="relative order-1 md:order-2 flex justify-center items-center">
             {/* Background Glow */}
             <div className="absolute inset-0 bg-mint/10 blur-[100px] rounded-full pointer-events-none mix-blend-screen"></div>
@@ -40,7 +39,8 @@ const HarmonyObjection: React.FC = () => {
               
               <img 
                 src="https://i.postimg.cc/XqCfBmRv/Chat-GPT-Image-30-de-nov-de-2025-16-26-08.png" 
-                alt="Mãos segurando luz" 
+                alt="Mãos segurando luz"
+                loading="lazy"
                 className="w-full h-full object-cover transform scale-110 hover:scale-100 transition-transform duration-[2s] ease-in-out"
                 style={{
                     maskImage: 'linear-gradient(to bottom, black 80%, transparent 100%), linear-gradient(to top, black 80%, transparent 100%)',
