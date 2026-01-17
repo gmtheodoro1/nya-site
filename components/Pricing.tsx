@@ -108,7 +108,7 @@ const Pricing: React.FC = () => {
           ))}
         </div>
 
-        {/* 3. O Passo a Passo (VÍDEO) */}
+        {/* 3. O Passo a Passo (VÍDEO OTIMIZADO) */}
         <div className="max-w-4xl mx-auto mb-24">
            
            {/* Títulos */}
@@ -135,6 +135,7 @@ const Pricing: React.FC = () => {
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                   referrerPolicy="strict-origin-when-cross-origin" 
                   allowFullScreen
+                  loading="lazy"
                 ></iframe>
               </div>
            </div>
