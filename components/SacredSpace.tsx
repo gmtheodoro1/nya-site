@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 const SacredSpace: React.FC = () => {
@@ -17,14 +16,15 @@ const SacredSpace: React.FC = () => {
           {/* Card 1: Minha Jornada (Lavender Theme) */}
           <div className="group relative rounded-[2.5rem] overflow-visible bg-white/5 backdrop-blur-xl border border-purple-300/20 hover:border-lavender/40 transition-all duration-500 hover:shadow-[0_0_50px_rgba(194,167,228,0.15)] flex flex-col h-full">
             
-            {/* Image Area - 3D Pop-out Effect */}
+            {/* Image Area - 3D Pop-out Effect - ADICIONADO loading="lazy" */}
             <div className="relative -mt-32 w-full flex justify-center z-20">
                {/* Radial Glow behind the popped out image */}
                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-lavender/20 blur-[60px] rounded-full opacity-60 group-hover:opacity-80 transition-opacity duration-700 pointer-events-none"></div>
                
                <img 
                  src="https://i.postimg.cc/02Yv113Y/diario.png" 
-                 alt="Diário" 
+                 alt="Diário"
+                 loading="lazy"
                  className="relative z-10 w-auto h-64 sm:h-80 md:h-96 object-contain animate-float drop-shadow-[0_20px_40px_rgba(0,0,0,0.6)] transform group-hover:scale-105 transition-transform duration-700" 
                />
             </div>
@@ -44,14 +44,15 @@ const SacredSpace: React.FC = () => {
           {/* Card 2: Meus Favoritos (Mint/Gold Theme) */}
           <div className="group relative rounded-[2.5rem] overflow-visible bg-white/5 backdrop-blur-xl border border-purple-300/20 hover:border-mint/40 transition-all duration-500 hover:shadow-[0_0_50px_rgba(170,228,167,0.15)] flex flex-col h-full">
             
-            {/* Image Area - 3D Pop-out Effect */}
+            {/* Image Area - 3D Pop-out Effect - ADICIONADO loading="lazy" */}
             <div className="relative -mt-32 w-full flex justify-center z-20">
                {/* Radial Glow behind the popped out image */}
                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-mint/15 blur-[60px] rounded-full opacity-60 group-hover:opacity-80 transition-opacity duration-700 pointer-events-none"></div>
                
                <img 
                  src="https://i.postimg.cc/dVJYqSP5/bau.png" 
-                 alt="Baú" 
+                 alt="Baú"
+                 loading="lazy"
                  className="relative z-10 w-auto h-64 sm:h-80 md:h-96 object-contain animate-float drop-shadow-[0_20px_40px_rgba(0,0,0,0.6)] transform group-hover:scale-105 transition-transform duration-700"
                  style={{ animationDelay: '1s' }}
                />
