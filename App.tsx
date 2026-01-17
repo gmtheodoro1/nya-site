@@ -19,8 +19,8 @@ import Footer from './components/Footer';
 import BackgroundWrapper from './components/BackgroundWrapper';
 
 // Pages
-import Terms from './src/pages/Terms';
-import Privacy from './src/pages/Privacy';
+import Terms from './pages/Terms';
+import Privacy from './pages/Privacy';
 
 const LandingPage: React.FC = () => (
   <>
