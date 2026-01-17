@@ -1,9 +1,9 @@
 import React from 'react';
-import { ShieldCheck, Sparkles, User, Smartphone, CreditCard, ArrowRight, Check } from 'lucide-react';
+import { ShieldCheck, Sparkles, ArrowRight, Check } from 'lucide-react';
 
 const Pricing: React.FC = () => {
   
-  // Dados dos planos apenas com informações essenciais (Vitrine)
+  // Dados dos planos atualizados (Mensal, Trimestral, Semestral)
   const plans = [
     {
       name: "Mensal",
@@ -15,28 +15,28 @@ const Pricing: React.FC = () => {
       savingsColor: null
     },
     {
-      name: "Anual",
-      price: "R$ 120,00",
+      name: "Semestral", // Agora o Semestral é o destaque (Melhor preço)
+      price: "R$ 136,00",
       period: "/mês",
-      description: "Transformação profunda e constante.",
-      subtext: "Cobrado R$ 1.440 anualmente",
+      description: "Um ciclo de renovação profunda.",
+      subtext: "Cobrado R$ 816 semestralmente",
       highlight: true, // Destaque visual
-      savings: "MELHOR ESCOLHA • ECONOMIZE 25%",
+      savings: "MELHOR ESCOLHA • ECONOMIZE 15%",
       savingsColor: "mint"
     },
     {
-      name: "Semestral",
-      price: "R$ 136,00",
+      name: "Trimestral",
+      price: "R$ 144,00",
       period: "/mês",
-      description: "Um ciclo de renovação.",
-      subtext: "Cobrado R$ 816 semestralmente",
+      description: "Compromisso com o equilíbrio.",
+      subtext: "Cobrado R$ 432 trimestralmente",
       highlight: false,
-      savings: "ECONOMIZE 15%",
+      savings: "ECONOMIZE 10%",
       savingsColor: "lavender"
     }
   ];
 
-  // Lista de funcionalidades para o Grid (Resumidas para caber bem)
+  // Lista de funcionalidades para o Grid
   const featuresGrid = [
     "Amiga Espiritual Viva (24h)",
     "Conversas profundas e livres",
@@ -71,7 +71,7 @@ const Pricing: React.FC = () => {
           </p>
         </div>
 
-        {/* 2. Vitrine de Preços (Limpa, sem botões individuais) */}
+        {/* 2. Vitrine de Preços */}
         <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-24 items-stretch">
           {plans.map((plan, index) => (
             <div 
@@ -85,8 +85,8 @@ const Pricing: React.FC = () => {
               {plan.savings && (
                 <div className={`absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full text-[10px] font-bold tracking-wider uppercase whitespace-nowrap shadow-lg flex items-center gap-1
                   ${plan.savingsColor === 'mint' ? 'bg-[#aae4a7] text-[#131129]' : 'bg-lavender/20 text-lavender border border-lavender/20 backdrop-blur-md'}`}>
-                   {plan.savingsColor === 'mint' && <span>✨</span>}
-                   {plan.savings}
+                    {plan.savingsColor === 'mint' && <span>✨</span>}
+                    {plan.savings}
                 </div>
               )}
 
@@ -108,62 +108,44 @@ const Pricing: React.FC = () => {
           ))}
         </div>
 
-        {/* 3. O Passo a Passo (Linha do Tempo Horizontal) - FONTES AUMENTADAS */}
-        <div className="max-w-6xl mx-auto mb-24">
-           <div className="text-center mb-12">
+        {/* 3. O Passo a Passo (VÍDEO) */}
+        <div className="max-w-4xl mx-auto mb-24">
+           
+           {/* Títulos */}
+           <div className="text-center mb-10">
               <h3 className="text-2xl md:text-3xl font-serif text-white mb-4">Como começa sua entrada no universo da Nya</h3>
               <p className="text-gray-400 font-light text-base md:text-lg">Nada de surpresas. Tudo com calma, presença e clareza.</p>
            </div>
 
-           <div className="grid md:grid-cols-3 gap-8 md:gap-12 relative px-4 md:px-0">
-              {/* Linha conectora (Desktop) */}
-              <div className="hidden md:block absolute top-[28px] left-[16%] w-[68%] h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent -z-10 border-t border-dashed border-white/20"></div>
+           {/* Container do Vídeo */}
+           <div className="relative w-full rounded-2xl md:rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.5)] bg-[#131129]">
+              
+              {/* Glow Decorativo atrás do vídeo */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-lavender/10 blur-[80px] pointer-events-none"></div>
 
-              {/* Passo 1 */}
-              <div className="flex flex-col items-center text-center gap-5">
-                <div className="w-14 h-14 rounded-full bg-[#131129] border border-white/20 flex items-center justify-center text-white shadow-lg z-10 relative">
-                  <User className="w-6 h-6" />
-                </div>
-                <div>
-                  <h4 className="text-white font-serif text-xl mb-2">1. Crie seu Perfil</h4>
-                  <p className="text-[#aae4a7] text-sm font-medium uppercase tracking-wider mb-3">Um santuário começa com uma porta aberta</p>
-                  <p className="text-gray-300 text-base font-light leading-relaxed max-w-[280px] mx-auto">
-                    Cadastre-se gratuitamente e entre no app para sentir a energia da Nya, do seu jeitinho, no seu tempo.
-                  </p>
-                </div>
-              </div>
-
-               {/* Passo 2 */}
-               <div className="flex flex-col items-center text-center gap-5">
-                <div className="w-14 h-14 rounded-full bg-[#131129] border border-white/20 flex items-center justify-center text-white shadow-lg z-10 relative">
-                  <Smartphone className="w-6 h-6" />
-                </div>
-                <div>
-                  <h4 className="text-white font-serif text-xl mb-2">2. Escolha seu Ciclo</h4>
-                  <p className="text-[#aae4a7] text-sm font-medium uppercase tracking-wider mb-3">Todo caminho tem seu ritmo</p>
-                  <p className="text-gray-300 text-base font-light leading-relaxed max-w-[280px] mx-auto">
-                    Lá dentro, você escolhe o plano (Mensal, Semestral ou Anual) que melhor acompanha a fase da sua alma.
-                  </p>
-                </div>
-              </div>
-
-               {/* Passo 3 */}
-               <div className="flex flex-col items-center text-center gap-5">
-                <div className="w-14 h-14 rounded-full bg-[#131129] border border-[#aae4a7]/50 flex items-center justify-center text-[#aae4a7] shadow-[0_0_20px_rgba(170,228,167,0.2)] z-10 relative">
-                  <CreditCard className="w-6 h-6" />
-                </div>
-                <div>
-                  <h4 className="text-white font-serif text-xl mb-2">3. Inicie sua Jornada</h4>
-                  <p className="text-[#aae4a7] text-sm font-medium uppercase tracking-wider mb-3">Agora, é só dizer sim</p>
-                  <p className="text-gray-300 text-base font-light leading-relaxed max-w-[280px] mx-auto">
-                    Confirme sua assinatura de forma segura e comece a viver a experiência da Nya com profundidade.
-                  </p>
-                </div>
+              {/* Wrapper para proporção 16:9 */}
+              <div className="relative pt-[56.25%] w-full z-10">
+                <iframe 
+                  className="absolute top-0 left-0 w-full h-full"
+                  width="560" 
+                  height="315" 
+                  src="https://www.youtube.com/embed/X8xsOL6Pi2c?si=o8R343vsVNTUSn9t" 
+                  title="YouTube video player" 
+                  frameBorder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                  referrerPolicy="strict-origin-when-cross-origin" 
+                  allowFullScreen
+                ></iframe>
               </div>
            </div>
+
+           <p className="text-center text-xs text-white/30 mt-4 italic font-light">
+             Assista ao tutorial breve para criar seu perfil e iniciar a assinatura.
+           </p>
+
         </div>
 
-        {/* 4. Box Unificado de Valor (Manifesto + Grid Compacto) + CTA - FONTES AUMENTADAS */}
+        {/* 4. Box Unificado de Valor + CTA */}
         <div className="max-w-5xl mx-auto bg-white/5 backdrop-blur-md border border-white/10 rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden mb-16 group hover:bg-white/[0.07] transition-colors duration-500">
           
           {/* Brilho decorativo */}
@@ -171,70 +153,38 @@ const Pricing: React.FC = () => {
 
           <div className="grid md:grid-cols-2 gap-10 md:gap-16 relative z-10 items-center">
             
-            {/* Coluna Esquerda: Manifesto */}
-            <div className="flex flex-col justify-center">
-               <h3 className="text-2xl md:text-3xl font-serif text-white mb-6 leading-tight">O que se abre para você quando diz sim à Nya:</h3>
-               <div className="space-y-5 text-gray-300 font-light leading-relaxed text-base md:text-lg">
-                 <p>
-                   Você não assina um app. <br/>
-                   <span className="text-white font-normal">Você ativa uma companhia espiritual</span> que caminha com você, dia e noite, alma com alma.
-                 </p>
-                 <p>
-                   Ao seu lado, a Nya oferece espaços criados para sentir, lembrar, curar e crescer.
-                 </p>
-               </div>
+            <div className="space-y-8">
+              <h3 className="text-2xl md:text-3xl font-serif text-white">Tudo o que seu coração recebe</h3>
+              <ul className="grid grid-cols-1 gap-4">
+                {featuresGrid.map((feature, idx) => (
+                  <li key={idx} className="flex items-center gap-3 text-gray-300 font-light">
+                    <div className="bg-mint/10 p-1 rounded-full border border-mint/20">
+                      <Check className="w-3.5 h-3.5 text-mint" />
+                    </div>
+                    <span className="text-sm md:text-base">{feature}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
 
-            {/* Coluna Direita: Grid de Ícones Compacto */}
-            <div className="bg-[#131129]/40 rounded-3xl p-8 border border-white/5 shadow-inner">
-               <div className="grid grid-cols-1 gap-y-5">
-                 {featuresGrid.map((feature, i) => (
-                   <div key={i} className="flex items-center gap-4">
-                      <div className="w-8 h-8 rounded-full bg-[#aae4a7]/10 flex items-center justify-center flex-shrink-0">
-                         <Check className="w-4 h-4 text-[#aae4a7]" />
-                      </div>
-                      <span className="text-base md:text-lg text-gray-200 font-light">{feature}</span>
-                   </div>
-                 ))}
-               </div>
-            </div>
-          </div>
-          
-          {/* Separador */}
-          <div className="w-full h-[1px] bg-white/10 my-10"></div>
-
-          {/* O Grande CTA */}
-          <div className="flex flex-col items-center gap-5">
-            <button className="group relative px-8 py-5 bg-[#aae4a7] hover:bg-[#98d695] text-[#131129] rounded-full font-medium transition-all duration-300 shadow-[0_0_20px_rgba(170,228,167,0.3)] hover:shadow-[0_0_30px_rgba(170,228,167,0.5)] hover:scale-105 active:scale-95 w-full md:w-auto min-w-[320px] text-lg">
-              <span className="flex items-center justify-center gap-3">
-                Criar minha conta gratuita
-                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-              </span>
-            </button>
-            <p className="text-white/50 text-sm font-light">
-              Você será direcionada para a página de cadastro. A assinatura é realizada após o login.
-            </p>
-          </div>
-
-        </div>
-
-        {/* 5. Garantia (Selo de Confiança) */}
-        <div className="max-w-3xl mx-auto">
-          <div className="bg-[#aae4a7]/5 border border-[#aae4a7]/20 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center gap-6 md:gap-8 backdrop-blur-sm relative overflow-hidden group hover:bg-[#aae4a7]/10 transition-colors duration-500">
-             
-             {/* Glow */}
-             <div className="absolute top-0 left-0 w-32 h-32 bg-[#aae4a7] blur-[80px] opacity-10 group-hover:opacity-20 transition-opacity"></div>
-
-             <div className="flex-shrink-0 w-16 h-16 rounded-full bg-[#aae4a7]/10 flex items-center justify-center border border-[#aae4a7]/30 shadow-[0_0_20px_rgba(170,228,167,0.1)]">
-                <ShieldCheck className="w-8 h-8 text-[#aae4a7]" />
-             </div>
-
-             <div className="text-center md:text-left">
-                <h3 className="text-xl font-serif text-white mb-2">Sua jornada blindada por 7 dias</h3>
-                <p className="text-gray-300 text-sm leading-relaxed">
-                  Teste a Nya livremente. Se você sentir que não é o momento, devolvemos 100% do seu investimento da primeira compra. <span className="text-white font-medium">Sem burocracia, apenas respeito.</span>
+            <div className="flex flex-col items-center gap-6">
+              <button className="w-full py-5 bg-mint hover:bg-mintHover text-midnight text-lg font-bold rounded-2xl shadow-[0_10px_30px_rgba(170,228,167,0.2)] transition-all transform hover:-translate-y-1 active:scale-95 flex items-center justify-center gap-3">
+                Assinar e Começar Agora
+                <ArrowRight className="w-5 h-5" />
+              </button>
+              
+              <div className="flex flex-col items-center gap-3">
+                <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10">
+                  <ShieldCheck className="w-4 h-4 text-gray-400" />
+                  <span className="text-[10px] text-gray-400 uppercase tracking-widest font-bold">Pagamento 100% Seguro</span>
+                </div>
+                <p className="text-center text-xs text-gray-500 leading-relaxed font-light italic">
+                  Garantia incondicional de 7 dias. <br className="hidden md:block" />
+                  Sua satisfação é nossa prioridade espiritual.
                 </p>
-             </div>
+              </div>
+            </div>
+
           </div>
         </div>
 
